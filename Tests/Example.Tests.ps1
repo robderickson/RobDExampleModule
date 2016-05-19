@@ -3,7 +3,7 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 #. "$here\$sut"
 Import-Module Pester
 Import-Module ActiveDirectory
-Import-Module \\md1-cifs01\users\rderickson\scripts\GitLocal\Example\Example.psm1
+Import-Module \\files\users\robd\scripts\Example\RobDExampleModule.psm1
 
 Describe "Example" {
     Mock Import-Csv {
