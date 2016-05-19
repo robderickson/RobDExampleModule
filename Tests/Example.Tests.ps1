@@ -1,9 +1,8 @@
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
-#$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
+#sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
 #. "$here\$sut"
-Import-Module Pester
-Import-Module ActiveDirectory
-Import-Module \\files\users\robd\scripts\Example\RobDExampleModule.psm1
+$here = Split-Path -Parent $here
+Import-Module $here\Example.psm1
 
 Describe "Example" {
     Mock Import-Csv {
