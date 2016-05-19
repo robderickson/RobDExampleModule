@@ -5,14 +5,14 @@ $here = Split-Path -Parent $here
 Import-Module $here\Example.psm1
 
 Describe "Example" {
-    Mock Import-Csv {
+    Mock -ModuleName Microsoft.PowerShell.Utility Import-Csv {
         return @{
             Site = 'TST'
             DataPath = '\\files\data.csv'
         }
     } -ParameterFilter { $Path -and $Path.StartsWith('\\files\sites.csv') }
     
-    Mock Import-Csv {
+    Mock -ModuleName Microsoft.PowerShell.Utility Import-Csv {
         return @{
             TheData = 'Some Data'
             Location = 'MyLoc'
