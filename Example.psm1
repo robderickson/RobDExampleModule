@@ -11,7 +11,7 @@ function Example {
         $props = @{
             Data = $Data.TheData
         }
-        $obj = New-Object -TypeName PSObject -Properties $props
+        $obj = New-Object -TypeName PSObject -Property $props
         Write-Output $obj
     }
 }
